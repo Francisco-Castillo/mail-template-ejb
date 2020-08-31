@@ -8,12 +8,13 @@ package com.fcastillo.mail.template.ejb;
 import com.fcastillo.mail.template.entidades.Templates;
 import java.util.List;
 import javax.ejb.Local;
+import javax.ejb.Remote;
 
 /**
  *
  * @author fcastillo
  */
-@Local
+@Remote
 public interface Template {
 
     void create(Templates templates);
