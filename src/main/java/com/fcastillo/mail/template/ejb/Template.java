@@ -14,7 +14,7 @@ import javax.ejb.Local;
  * @author fcastillo
  */
 @Local
-public interface TemplatesFacadeLocal {
+public interface Template {
 
     void create(Templates templates);
 

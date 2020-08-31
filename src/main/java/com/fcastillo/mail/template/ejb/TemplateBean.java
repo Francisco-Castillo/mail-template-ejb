@@ -17,9 +17,8 @@ import javax.persistence.PersistenceContext;
  *
  * @author fcastillo
  */
-@LocalBean
 @Stateless
-public class TemplatesFacade extends AbstractFacade<Templates> implements TemplatesFacadeLocal {
+public class TemplateBean extends AbstractFacade<Templates> implements Template {
 
     @PersistenceContext(unitName = "com.fcastillo_mail-template-ejb_ejb_1.0-SNAPSHOTPU")
     private EntityManager em;
@@ -29,7 +28,7 @@ public class TemplatesFacade extends AbstractFacade<Templates> implements Templa
         return em;
     }
 
-    public TemplatesFacade() {
+    public TemplateBean() {
         super(Templates.class);
     }
 
