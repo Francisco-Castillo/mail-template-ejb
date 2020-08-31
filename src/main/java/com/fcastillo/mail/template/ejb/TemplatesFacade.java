@@ -6,6 +6,7 @@
 package com.fcastillo.mail.template.ejb;
 
 import com.fcastillo.mail.template.entidades.Templates;
+import javax.ejb.EJB;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -14,11 +15,14 @@ import javax.persistence.PersistenceContext;
  *
  * @author fcastillo
  */
-@Stateless(name = "TemplatesFacadeEJB")
-public class TemplatesFacade extends AbstractFacade<Templates> implements TemplatesFacadeLocal {
+@Stateless
+public class TemplatesFacade extends AbstractFacade<Templates>  implements TemplatesRemoteInterface{
 
     @PersistenceContext(unitName = "com.fcastillo_mail-template-ejb_ejb_1.0-SNAPSHOTPU")
     private EntityManager em;
+    
+    @EJB
+    TemplatesLocalInterface localEJB;
 
     @Override
     protected EntityManager getEntityManager() {
@@ -27,6 +31,11 @@ public class TemplatesFacade extends AbstractFacade<Templates> implements Templa
 
     public TemplatesFacade() {
         super(Templates.class);
+    }
+
+    @Override
+    public void saludar() {
+        System.out.println("Probando....");
     }
     
 }
