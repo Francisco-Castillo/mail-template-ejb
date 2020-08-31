@@ -6,6 +6,7 @@
 package com.fcastillo.mail.template.ejb;
 
 import com.fcastillo.mail.template.entidades.Templates;
+import java.util.List;
 import javax.ejb.Local;
 
 /**
@@ -13,7 +14,20 @@ import javax.ejb.Local;
  * @author fcastillo
  */
 @Local
-public interface TemplatesLocalInterface {
+public interface TemplatesFacadeLocal {
+
+    void create(Templates templates);
+
+    void edit(Templates templates);
+
+    void remove(Templates templates);
 
     Templates find(Object id);
+
+    List<Templates> findAll();
+
+    List<Templates> findRange(int[] range);
+
+    int count();
+    
 }
