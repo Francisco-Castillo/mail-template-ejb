@@ -7,6 +7,8 @@ package com.fcastillo.mail.template.ejb;
 
 import com.fcastillo.mail.template.entidades.Templates;
 import javax.ejb.Stateless;
+import javax.enterprise.context.Dependent;
+import javax.inject.Named;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
@@ -14,6 +16,8 @@ import javax.persistence.PersistenceContext;
  *
  * @author fcastillo
  */
+@Dependent
+@Named
 @Stateless
 public class TemplatesFacade extends AbstractFacade<Templates> implements TemplatesFacadeLocal {
 
@@ -28,5 +32,5 @@ public class TemplatesFacade extends AbstractFacade<Templates> implements Templa
     public TemplatesFacade() {
         super(Templates.class);
     }
-    
+
 }
