@@ -14,7 +14,7 @@ import javax.persistence.PersistenceContext;
  *
  * @author fcastillo
  */
-@Stateless
+@Stateless(name = "TemplatesFacadeEJB")
 public class TemplatesFacade extends AbstractFacade<Templates> implements TemplatesFacadeLocal {
 
     @PersistenceContext(unitName = "com.fcastillo_mail-template-ejb_ejb_1.0-SNAPSHOTPU")
