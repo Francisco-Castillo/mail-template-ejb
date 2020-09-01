@@ -5,6 +5,8 @@
  */
 package com.fcastillo.mail.template.ejb;
 
+import com.fcastillo.mail.template.entidades.Templates;
+import javax.ejb.EJB;
 import javax.ejb.Stateless;
 
 /**
@@ -13,6 +15,9 @@ import javax.ejb.Stateless;
  */
 @Stateless
 public class MenuFacade implements MenuFacadeRemote {
+    
+    @EJB
+    TemplatesFacadeLocal templateEJB;
 
     @Override
     public String saludar() {
@@ -21,4 +26,8 @@ public class MenuFacade implements MenuFacadeRemote {
 
     // Add business logic below. (Right-click in editor and choose
     // "Insert Code > Add Business Method")
+    @Override
+    public Templates findById(Integer id) {
+        return templateEJB.find(id);
+    }
 }
