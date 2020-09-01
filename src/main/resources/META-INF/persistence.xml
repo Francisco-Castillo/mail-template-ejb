@@ -3,6 +3,9 @@
   <persistence-unit name="com.fcastillo_mail-template-ejb_ejb_1.0-SNAPSHOTPU" transaction-type="JTA">
     <jta-data-source>jdbc/templatesdb</jta-data-source>
     <exclude-unlisted-classes>false</exclude-unlisted-classes>
-    <properties/>
+     <shared-cache-mode>NONE</shared-cache-mode>
+    <properties>
+      <property name="eclipselink.cache.shared.default" value="false" />
+    </properties>
   </persistence-unit>
 </persistence>
