@@ -7,6 +7,8 @@ package com.fcastillo.mail.template.ejb;
 
 import com.fcastillo.mail.template.entidades.Templates;
 import javax.ejb.Stateless;
+import javax.ejb.TransactionManagement;
+import javax.ejb.TransactionManagementType;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
@@ -15,6 +17,7 @@ import javax.persistence.PersistenceContext;
  * @author fcastillo
  */
 @Stateless
+@TransactionManagement(TransactionManagementType.CONTAINER)
 public class TemplatesFacade extends AbstractFacade<Templates> implements TemplatesFacadeLocal {
 
     @PersistenceContext(unitName = "com.fcastillo_mail-template-ejb_ejb_1.0-SNAPSHOTPU")
