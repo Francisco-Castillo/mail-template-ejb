@@ -6,6 +6,7 @@
 package com.fcastillo.mail.template.ejb;
 
 import com.fcastillo.mail.template.entidades.Templates;
+import java.util.List;
 import javax.ejb.EJB;
 import javax.ejb.Stateless;
 
@@ -15,9 +16,9 @@ import javax.ejb.Stateless;
  */
 @Stateless
 public class MenuFacade implements MenuFacadeRemote {
-    
+
     @EJB
-    TemplatesFacadeLocal templateEJB;
+    private TemplatesFacadeLocal templateEJB;
 
     @Override
     public String saludar() {
@@ -29,5 +30,10 @@ public class MenuFacade implements MenuFacadeRemote {
     @Override
     public Templates findById(Integer id) {
         return templateEJB.find(id);
+    }
+
+    @Override
+    public List<Templates> buscarTodos() {
+        return templateEJB.findAll();
     }
 }

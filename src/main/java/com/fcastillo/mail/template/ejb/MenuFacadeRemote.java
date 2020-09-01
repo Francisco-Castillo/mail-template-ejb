@@ -6,6 +6,7 @@
 package com.fcastillo.mail.template.ejb;
 
 import com.fcastillo.mail.template.entidades.Templates;
+import java.util.List;
 import javax.ejb.Remote;
 
 /**
@@ -18,4 +19,6 @@ public interface MenuFacadeRemote {
     String saludar();
 
     Templates findById(Integer id);
+
+    public List<Templates> buscarTodos();
 }
